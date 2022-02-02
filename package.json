@@ -1,0 +1,27 @@
+{
+  "name": "nodeexpress",
+  "version": "1.0.0",
+  "description": "Backend part of Full stack course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajoy99/NodeExpress.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "js"
+  ],
+  "author": "rajoy99",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajoy99/NodeExpress/issues"
+  },
+  "homepage": "https://github.com/rajoy99/NodeExpress#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
