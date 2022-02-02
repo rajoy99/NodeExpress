@@ -1,9 +1,11 @@
 const http = require('http')
 
 const express = require('express')
+const { response } = require('express')
 const app = express()
 
 app.use(express.json())
+app.set('view engine', 'pug')
 
 let persons = [
     { 
@@ -34,6 +36,11 @@ app.post('/api/persons', (request, response) => {
   console.log(typeof person)
   response.json(person)
 })
+
+app.get('/api/persons/info', (request,response) => {
+    response.render('info',{information:69});
+})
+
 
 app.get('/api/persons/:id', (request, response) => {
   const id = Number(request.params.id)
