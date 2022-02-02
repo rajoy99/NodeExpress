@@ -30,12 +30,38 @@ let persons = [
     }
 ]
 
+const idgenerate = (min,max) =>{
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+
 app.post('/api/persons', (request, response) => {
-  const person = request.body
-  console.log(person)
-  console.log(typeof person)
-  response.json(person)
-})
+    const body = request.body
+  
+    if (!body.name) {
+      return response.status(400).json({ 
+        error: 'content missing' 
+      })
+    }
+  
+    const person = {
+      name: body.name,
+      number:body.number,
+      id: idgenerate(10,10000),
+    }
+  
+    persons = persons.concat(person)
+  
+    response.json(person)
+  })
+
+
+
+
+
+
+
 
 app.get('/api/persons/info', (request,response) => {
     response.render('info',{information:persons.length});
