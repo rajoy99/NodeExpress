@@ -38,7 +38,7 @@ app.post('/api/persons', (request, response) => {
 })
 
 app.get('/api/persons/info', (request,response) => {
-    response.render('info',{information:69});
+    response.render('info',{information:persons.length});
 })
 
 
